@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Ghroob';
+  src: url('/fonts/itfGhroobArabic-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ghroob';
+  src: url('/fonts/itfGhroobArabic-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ghroob';
+  src: url('/fonts/itfGhroobArabic-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ghroob';
+  src: url('/fonts/itfGhroobArabic-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ghroob';
+  src: url('/fonts/itfGhroobArabic-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* The Academic Curator - Color Palette */
+    --canvas: 39 100% 94%;              /* Warm Ivory #FFF4E0 */
+    --deep-teal: 170 66% 19%;           /* Deep Teal #134f47 */
+    --vibrant-orange: 20 87% 47%;       /* Vibrant Orange #E85B0D */
+    --crimson-red: 360 78% 44%;         /* Crimson Red #C51A1B */
+    --deep-maroon: 343 73% 26%;         /* Deep Maroon #71122b */
+    --dark-plum: 330 57% 15%;           /* Dark Plum #3D0F28 */
+    --pure-white: 0 0% 100%;            /* #FFFFFF */
+
+    --background: 39 100% 94%;
+    --foreground: 330 57% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 330 57% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 330 57% 15%;
+    --primary: 170 66% 19%;
+    --primary-foreground: 39 100% 94%;
+    --secondary: 39 100% 94%;
+    --secondary-foreground: 170 66% 19%;
+    --muted: 39 40% 90%;
+    --muted-foreground: 330 30% 35%;
+    --accent: 20 87% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 360 78% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 39 30% 85%;
+    --input: 39 30% 85%;
+    --ring: 170 66% 19%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 330 57% 15%;
+    --sidebar-primary: 170 66% 19%;
+    --sidebar-primary-foreground: 39 100% 94%;
+    --sidebar-accent: 39 100% 94%;
+    --sidebar-accent-foreground: 170 66% 19%;
+    --sidebar-border: 39 30% 85%;
+    --sidebar-ring: 170 66% 19%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Ghroob', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ghroob', 'Noto Naskh Arabic', 'Noto Sans Arabic', serif;
+    line-height: 1.3;
+    color: #3D0F28;
+  }
+}
+
+@layer utilities {
+  .ambient-shadow {
+    box-shadow: 0 8px 40px rgba(61, 15, 40, 0.06);
+  }
+  
+  .ambient-shadow-lg {
+    box-shadow: 0 16px 48px rgba(61, 15, 40, 0.08);
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .glass-dark {
+    background: rgba(61, 15, 40, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #3D0F28 0%, #71122b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
