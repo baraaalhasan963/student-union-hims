@@ -38,32 +38,14 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#hero"
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
             whileHover={{ scale: 1.02 }}
           >
-            <div className={`p-2.5 rounded-full transition-colors duration-300 ${
-              isScrolled ? "bg-deep-teal/10" : "bg-white/15 backdrop-blur-[1px]"
-            }`}>
-              <img
-                src={isScrolled ? "horizinal logo.svg" : "image1.png"}
-                alt="اتحاد الطلبة - شعار"
-                className={`w-28 h-16 transition-all duration-300 object-contain ${
-                  isScrolled ? "opacity-100" : "opacity-90"
-                }`}
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-display font-bold text-lg leading-none transition-colors duration-300 ${
-                isScrolled ? "text-dark-plum" : "text-white"
-              }`}>
-                اتحاد الطلبة
-              </span>
-              <span className={`text-md mt-0.5 transition-colors duration-300 ${
-                isScrolled ? "text-dark-plum/60" : "text-white/70"
-              }`}>
-                جامعة حمص
-              </span>
-            </div>
+            <img
+              src="LOGO.svg"
+              alt="اتحاد الطلبة - جامعة حمص"
+              className="h-12 w-auto object-contain transition-all duration-300"
+            />
           </motion.a>
 
           {/* Desktop Nav Links */}
