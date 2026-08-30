@@ -48,7 +48,7 @@ export default function Footer() {
             >
               <div className="p-2.5 rounded-2xl bg-white/10">
               <img
-                src="\public\image1.png"
+                src="image1.png"
                 alt="اتحاد الطلبة - شعار"
                 className="w-28 h-16 object-contain"
               />

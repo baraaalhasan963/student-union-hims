@@ -45,7 +45,7 @@ export default function Navbar() {
               isScrolled ? "bg-deep-teal/10" : "bg-white/15 backdrop-blur-[1px]"
             }`}>
               <img
-                src={isScrolled ? "/horizinal logo.svg" : "/image1.png"}
+                src={isScrolled ? "horizinal logo.svg" : "image1.png"}
                 alt="اتحاد الطلبة - شعار"
                 className={`w-28 h-16 transition-all duration-300 object-contain ${
                   isScrolled ? "opacity-100" : "opacity-90"
