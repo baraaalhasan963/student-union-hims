@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Mail, Phone, MapPin, ArrowUpLeft } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpLeft } from "lucide-react";
 
 const footerLinks = [
   {

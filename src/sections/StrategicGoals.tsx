@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Compass, Heart, Lightbulb, Globe, ChevronLeft, ArrowLeft } from "lucide-react";
+import { Compass, Heart, Lightbulb, Globe, ArrowLeft } from "lucide-react";
 
 const goals = [
   {
