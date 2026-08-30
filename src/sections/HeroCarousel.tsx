@@ -261,7 +261,7 @@ export default function HeroCarousel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-10 right-12 hidden lg:flex flex-col items-center gap-2 z-20"
+        className="absolute bottom-10 left-12 hidden lg:flex flex-col items-center gap-2 z-20"
       >
         <span className="text-white/50 text-xs font-medium writing-mode-vertical rotate-180" style={{ writingMode: "vertical-rl" }}>
           اسحب للأسفل
