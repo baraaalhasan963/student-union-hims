@@ -1,43 +1,86 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Building2, Users, HandHeart, Scale, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  CalendarDays,
+  ClipboardList,
+  Megaphone,
+  GraduationCap,
+  BookOpen,
+  Gauge,
+  Building2,
+  Layers,
+} from "lucide-react";
 
 const departments = [
   {
     id: 1,
-    icon: Building2,
-    title: "تمثيل الطلبة",
-    description: "تمثيل الطلبة في المدينة الجامعية ومتابعة شؤونهم والسهر على تحقيق مصالحهم.",
+    icon: CalendarDays,
+    title: "قسم الفعاليات والأنشطة",
+    description:
+      "المسؤول عن تخطيط وتنظيم وإدارة الفعاليات والأنشطة الطلابية، بما يحقق التكامل بين الجوانب العلمية، الثقافية، الرياضية، الاجتماعية.",
     color: "#134f47",
     bgColor: "bg-deep-teal/5",
     accentBg: "bg-deep-teal",
   },
   {
     id: 2,
-    icon: Scale,
-    title: "ضمان الحقوق",
-    description: "متابعة شؤون الطلبة وضمان حقوقهم كاملة داخل المدينة الجامعية.",
+    icon: ClipboardList,
+    title: "قسم التنظيم وقضايا الطلبة",
+    description:
+      "المسؤول عن تنظيم العمل الطلابي ومتابعة قضايا الطلبة واحتياجاتهم وإيصال صوتهم ومقترحاتهم.",
     color: "#E85B0D",
     bgColor: "bg-vibrant-orange/5",
     accentBg: "bg-vibrant-orange",
   },
   {
     id: 3,
-    icon: HandHeart,
-    title: "العمل التطوعي",
-    description: "تنظيم العمل التطوعي بين الطلبة بما يسهم في بناء بيئة جامعية داعمة للمجتمع.",
+    icon: Megaphone,
+    title: "قسم الإعلام",
+    description:
+      "المسؤول عن نقل صوت الاتحاد وصناعة محتواه وعرض إنجازاته، وتعزيز التواصل مع الطلبة وسماع صوتهم عبر التغطية الإعلامية والحضور الرقمي.",
     color: "#71122b",
     bgColor: "bg-deep-maroon/5",
     accentBg: "bg-deep-maroon",
   },
   {
     id: 4,
-    icon: ShieldCheck,
-    title: "بيئة داعمة",
-    description: "بناء بيئة داعمة ومحفزة تضمن راحة الطلبة وتحفزهم على الإبداع والتميّز.",
+    icon: GraduationCap,
+    title: "قسم التدريب والتأهيل",
+    description:
+      "المسؤول عن تطوير مهارات الطلبة وقدراتهم عبر البرامج التدريبية وورش العمل، ودعم جاهزيتهم للدخول لسوق العمل.",
     color: "#3D0F28",
     bgColor: "bg-dark-plum/5",
     accentBg: "bg-dark-plum",
+  },
+  {
+    id: 5,
+    icon: BookOpen,
+    title: "القسم الأكاديمي",
+    description:
+      "المسؤول عن دعم المسيرة الأكاديمية للطلبة، ومتابعة قضاياهم التعليمية، وتعزيز وتطوير بيئة التعلم والتميّز والبحث العلمي.",
+    color: "#134f47",
+    bgColor: "bg-deep-teal/5",
+    accentBg: "bg-deep-teal",
+  },
+  {
+    id: 6,
+    icon: Gauge,
+    title: "قسم المتابعة والتقييم",
+    description:
+      "المسؤول عن متابعة وضمان سير العمل وتقييم الأداء وتطويره، لضمان جودة العمل وتحقيق أثر ملموس.",
+    color: "#E85B0D",
+    bgColor: "bg-vibrant-orange/5",
+    accentBg: "bg-vibrant-orange",
+  },
+  {
+    id: 7,
+    icon: Building2,
+    title: "قسم المدينة الجامعية",
+    description:
+      "المسؤول عن تمثيل الطلبة في المدينة الجامعية، ومتابعة شؤونهم وضمان حقوقهم، وتنظيم العمل التطوعي بما يسهم في بناء بيئة داعمة للطلبة.",
+    color: "#71122b",
+    bgColor: "bg-deep-maroon/5",
+    accentBg: "bg-deep-maroon",
   },
 ];
 
@@ -50,7 +93,7 @@ function AnimatedCard({ department, index }: { department: typeof departments[0]
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative"
     >
       <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full transition-all duration-500 hover:shadow-ambient-lg ambient-shadow overflow-hidden">
@@ -95,7 +138,7 @@ export default function Departments() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/10 text-deep-teal text-lg font-semibold mb-6"
           >
-            <Users className="w-6 h-6" />
+            <Layers className="w-6 h-6" />
             أقسامنا
           </motion.div>
 
@@ -115,14 +158,16 @@ export default function Departments() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-dark-plum/60 text-lg leading-relaxed"
           >
-            قسم المدينة الجامعية: المسؤول عن تمثيل الطلبة، ومتابعة شؤونهم وضمان حقوقهم، وتنظيم العمل التطوعي بما يسهم في بناء بيئة داعمة للطلبة.
+            أقسام متخصصة تعمل معاً لخدمة الطلبة، كلٌّ في مجاله، لتحقيق بيئة جامعية متكاملة وداعمة.
           </motion.p>
         </div>
 
         {/* Departments Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {departments.map((department, i) => (
-            <AnimatedCard key={department.id} department={department} index={i} />
+            <div key={department.id} className={i === departments.length - 1 ? "md:col-span-2" : ""}>
+              <AnimatedCard department={department} index={i} />
+            </div>
           ))}
         </div>
       </div>
