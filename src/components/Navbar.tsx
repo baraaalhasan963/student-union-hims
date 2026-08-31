@@ -42,9 +42,9 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
           >
             <img
-              src="LOGO.svg"
+              src="Asset2.svg"
               alt="اتحاد الطلبة - جامعة حمص"
-              className="h-12 w-auto object-contain transition-all duration-300"
+              className="h-10 w-auto object-contain transition-all duration-300"
             />
           </motion.a>
 

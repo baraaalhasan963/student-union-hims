@@ -46,21 +46,11 @@ export default function Footer() {
               className="flex items-center gap-3 mb-6"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="p-2.5 rounded-2xl bg-white/10">
               <img
-                src="image1.png"
+                src="Asset2.svg"
                 alt="اتحاد الطلبة - شعار"
-                className="w-28 h-16 object-contain"
+                className="h-16 w-auto object-contain"
               />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg text-white leading-none">
-                  اتحاد الطلبة
-                </span>
-                <span className="text-xs mt-0.5 text-white/50">
-                 جامعة حمص
-                </span>
-              </div>
             </motion.a>
 
             <p className="text-white/80 leading-relaxed mb-8 max-w-sm">
