@@ -133,7 +133,7 @@ export default function StrategicGoals() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="goals" className="relative py-28 lg:py-36 bg-canvas overflow-hidden">
+    <section id="goals" className="relative py-20 lg:py-24 bg-canvas overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-deep-teal/[0.02] rounded-full blur-3xl" />
@@ -188,10 +188,7 @@ export default function StrategicGoals() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-6 bg-white rounded-3xl p-2 pr-8 shadow-[0_8px_30px_rgb(113,18,43,0.1)]">
-            <p className="text-dark-plum/70 text-sm hidden sm:block">
-              هل لديك فكرة أو اقتراح يخدم الطلبة؟
-            </p>
+          <div className="inline-flex items-center bg-white rounded-3xl p-2 shadow-[0_8px_30px_rgb(113,18,43,0.1)]">
             <motion.a
               href="#join"
               whileHover={{ scale: 1.03 }}

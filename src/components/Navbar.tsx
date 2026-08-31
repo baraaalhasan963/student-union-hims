@@ -3,21 +3,50 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "الرئيسية", href: "#hero" },
-  { label: "الرؤية والرسالة", href: "#vision" },
-  { label: "أهدافنا", href: "#goals" },
-  { label: "إنجازاتنا", href: "#stats" },
-  { label: "انضم إلينا", href: "#join" },
+  { label: "الرئيسية", target: "hero" },
+  { label: "الرؤية والرسالة", target: "vision" },
+  { label: "أهدافنا", target: "goals" },
+  { label: "إنجازاتنا", target: "stats" },
+  { label: "انضم إلينا", target: "join" },
 ];
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.getElementById(link.target))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const handleScroll = () => {
+      const offset = window.scrollY + 120;
+      let current = "hero";
+      for (const el of sections) {
+        if (el.offsetTop <= offset) {
+          current = el.id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,11 +67,12 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#hero"
+            onClick={(e) => { e.preventDefault(); scrollTo("hero"); }}
             className="flex items-center group"
             whileHover={{ scale: 1.02 }}
           >
             <img
-              src="Asset2.svg"
+              src={isScrolled ? "AssetLogo.svg" : "Asset2.svg"}
               alt="اتحاد الطلبة - جامعة حمص"
               className="h-10 w-auto object-contain transition-all duration-300"
             />
@@ -52,39 +82,30 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link, i) => (
               <motion.a
-                key={link.href}
-                href={link.href}
+                key={link.target}
+                href={`#${link.target}`}
+                onClick={(e) => { e.preventDefault(); scrollTo(link.target); setActiveSection(link.target); }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i, duration: 0.4 }}
                 className={`relative px-4 py-2 text-md font-medium rounded-xl transition-all duration-300 group ${
-                  isScrolled
-                    ? "text-dark-plum/80 hover:text-deep-teal hover:bg-deep-teal/5"
-                    : "text-white/85 hover:text-white hover:bg-white/10"
+                  activeSection === link.target
+                    ? isScrolled
+                      ? "text-deep-teal font-bold bg-deep-teal/10"
+                      : "text-canvas font-bold bg-white/10"
+                    : isScrolled
+                      ? "text-dark-plum/80 hover:text-deep-teal hover:bg-deep-teal/5"
+                      : "text-white/85 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.label}
                 <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-4 ${
-                  isScrolled ? "bg-deep-teal" : "bg-white"
+                  activeSection === link.target
+                    ? "w-4 " + (isScrolled ? "bg-deep-teal" : "bg-canvas")
+                    : isScrolled ? "bg-deep-teal" : "bg-white"
                 }`} />
               </motion.a>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <motion.a
-              href="#join"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                isScrolled
-                  ? "bg-deep-teal text-canvas hover:bg-deep-teal/90 shadow-ambient"
-                  : "bg-white text-deep-teal hover:bg-white/90 shadow-ambient"
-              }`}
-            >
-              تسجيل عضوية
-            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,27 +134,21 @@ export default function Navbar() {
             <div className="container mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.a
-                  key={link.href}
-                  href={link.href}
+                  key={link.target}
+                  href={`#${link.target}`}
+                  onClick={(e) => { e.preventDefault(); scrollTo(link.target); setActiveSection(link.target); setIsMobileMenuOpen(false); }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-dark-plum/80 hover:text-deep-teal hover:bg-deep-teal/5 rounded-xl text-sm font-medium transition-colors"
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                    activeSection === link.target
+                      ? "text-deep-teal bg-deep-teal/10 font-bold"
+                      : "text-dark-plum/80 hover:text-deep-teal hover:bg-deep-teal/5"
+                  }`}
                 >
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#join"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-2 px-4 py-3 bg-deep-teal text-canvas rounded-xl text-sm font-semibold text-center hover:bg-deep-teal/90 transition-colors"
-              >
-                تسجيل عضوية
-              </motion.a>
             </div>
           </motion.div>
         )}

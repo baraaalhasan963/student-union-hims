@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 // الصور ببداية الصفحة
@@ -94,7 +94,7 @@ export default function HeroCarousel() {
   return (
     <section 
       id="hero" 
-      className="relative h-screen w-full overflow-hidden bg-deep-maroon"
+      className="relative h-screen w-full overflow-hidden bg-deep-teal"
     >
       {/* Background Images */}
       <AnimatePresence initial={false} custom={direction}>
@@ -112,8 +112,8 @@ export default function HeroCarousel() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-maroon/95 via-deep-maroon/50 to-deep-maroon/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-deep-maroon/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/95 via-deep-teal/50 to-deep-teal/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-teal/60 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -128,61 +128,23 @@ export default function HeroCarousel() {
               exit="hidden"
               className="space-y-6"
             >
-              {/* Badge */}
-              <motion.div
-                custom={0}
-                variants={textVariants}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
-              >
-                <Sparkles className="w-4 h-4 text-vibrant-orange" />
-                <span className="text-white/90 text-sm font-medium">
-                  العام الجامعي 2025-2026
-                </span>
-              </motion.div>
-
-              <motion.div className="bg-deep-maroon/20 backdrop-blur-sm p-6 rounded-[2rem] max-w-3xl space-y-5">
-                {/* Title */}
+              <motion.div className="bg-deep-teal/20 backdrop-blur-sm p-6 rounded-[2rem] max-w-3xl space-y-5">
                 <motion.h1
                   custom={1}
                   variants={textVariants}
-                  className="font-display font-semibold text-5xl md:text-6xl lg:text-5xl text-white leading-[1.1] whitespace-pre-line"
+                  className="font-display font-semibold text-4xl md:text-5xl lg:text-4xl text-white leading-tight whitespace-nowrap"
                 >
-                  {slides[current].title}
+                  {slides[current].title.replace(/\n/g, " ")}
                 </motion.h1>
 
                 {/* Subtitle */}
                 <motion.p
                   custom={2}
                   variants={textVariants}
-                  className="text-white/80 text-lg md:text-xl leading-relaxed max-w-lg"
+                  className="text-white/85 text-base md:text-lg leading-snug max-w-lg"
                 >
                   {slides[current].subtitle}
                 </motion.p>
-              </motion.div>
-
-              {/* CTA */}
-              <motion.div
-                custom={3}
-                variants={textVariants}
-                className="flex flex-wrap items-center gap-4 pt-4"
-              >
-                <motion.a
-                  href={slides[current].ctaLink}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-vibrant-orange text-white rounded-2xl font-bold text-base hover:bg-vibrant-orange/90 transition-colors shadow-ambient-lg"
-                >
-                  {slides[current].cta}
-                  <ChevronLeft className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="#vision"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-2xl font-semibold text-base hover:bg-white/20 transition-colors border border-white/20"
-                >
-                  تعرّف علينا
-                </motion.a>
               </motion.div>
             </motion.div>
           </AnimatePresence>
