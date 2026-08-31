@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="relative py-28 lg:py-36 bg-canvas overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-deep-teal/[0.03] rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-deep-teal/[0.03] rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6 lg:px-12 relative" ref={sectionRef}>
         <div className="text-center max-w-2xl mx-auto mb-16">

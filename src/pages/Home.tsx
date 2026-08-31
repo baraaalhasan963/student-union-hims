@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"
+import SocialFab from "../components/SocialFab"
 import HeroCarousel from "../sections/HeroCarousel"
 import VisionMission from "../sections/VisionMission"
 import StrategicGoals from "../sections/StrategicGoals"
@@ -20,6 +21,7 @@ export default function Home() {
       <TestimonialsSection />
       <JoinSection />
       <Footer />
+      <SocialFab />
     </main>
   )
 }

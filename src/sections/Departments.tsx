@@ -91,13 +91,13 @@ function AnimatedCard({ department, index }: { department: typeof departments[0]
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, x: -60 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
       transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative"
     >
       <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full transition-all duration-500 hover:shadow-ambient-lg ambient-shadow overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 bg-deep-teal/5" />
+        <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 bg-deep-teal/5" />
 
         <div className="relative z-10">
           <div className={`w-16 h-16 rounded-2xl ${department.bgColor} flex items-center justify-center mb-8 transition-colors duration-300`}>

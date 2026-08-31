@@ -77,7 +77,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <span
       ref={ref}
-      className="block w-full text-center font-display font-bold text-4xl md:text-5xl lg:text-6xl tabular-nums text-white"
+      className="block w-full text-center font-display font-bold text-2xl md:text-3xl lg:text-4xl tabular-nums text-white"
     >
       {suffix}{count.toLocaleString("en-EG")}
     </span>
@@ -89,7 +89,7 @@ export default function StatsSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="stats" className="relative py-28 lg:py-36 bg-deep-maroon overflow-hidden">
+    <section id="stats" className="relative py-20 lg:py-24 bg-deep-maroon overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -100,7 +100,7 @@ export default function StatsSection() {
 
       <div className="container mx-auto px-6 lg:px-12 relative" ref={sectionRef}>
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -123,16 +123,16 @@ export default function StatsSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, x: -60 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
               transition={{ duration: 0.6, delay: 0.15 * i }}
               className="group relative"
             >
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 lg:p-10 text-center hover:bg-white/10 transition-all duration-500 overflow-hidden">
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center hover:bg-white/10 transition-all duration-500 overflow-hidden">
                 {/* Glow Effect */}
                 <div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
@@ -141,9 +141,9 @@ export default function StatsSection() {
                 
                 <div className="relative">
                   <div 
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-white/10"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-5 bg-white/10"
                   >
-                    <stat.icon className="w-7 h-7 text-white" />
+                    <stat.icon className="w-5 h-5 text-white" />
                   </div>
 
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />

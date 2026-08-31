@@ -1,33 +1,58 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowUpLeft } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUpLeft,
+  Instagram,
+  Facebook,
+  Youtube,
+  MessageCircle,
+  Send,
+} from "lucide-react";
 
-const footerLinks = [
+const mainLinks = [
+  { label: "الرئيسية", href: "#hero" },
+  { label: "الرؤية والرسالة", href: "#vision" },
+  { label: "الأهداف الاستراتيجية", href: "#goals" },
+  { label: "أقسامنا", href: "#departments" },
+  { label: "الإنجازات", href: "#stats" },
+];
+
+const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const socialLinks = [
   {
-    title: "الأقسام الرئيسية",
-    links: [
-      { label: "الرئيسية", href: "#hero" },
-      { label: "الرؤية والرسالة", href: "#vision" },
-      { label: "الأهداف الاستراتيجية", href: "#goals" },
-      { label: "الإنجازات", href: "#stats" },
-    ],
+    label: "انستغرام",
+    href: "https://www.instagram.com/sunion.homs.uni",
+    icon: Instagram,
   },
   {
-    title: "الخدمات",
-    links: [
-      { label: "الإرشاد الأكاديمي", href: "#" },
-      { label: "المنح والفرص", href: "#" },
-      { label: "الفعاليات", href: "#" },
-      { label: "الدعم القانوني", href: "#" },
-    ],
+    label: "واتساب",
+    href: "https://whatsapp.com/channel/0029VbCeHvlGehEEYCDv1z2R",
+    icon: MessageCircle,
   },
   {
-    title: "التواصل",
-    links: [
-      { label: "اتصل بنا", href: "#" },
-      { label: "الأسئلة الشائعة", href: "#" },
-      { label: "الشكاوى والاقتراحات", href: "#" },
-      { label: "الإعلانات", href: "#" },
-    ],
+    label: "تلغرام",
+    href: "https://t.me/sunionhoms",
+    icon: Send,
+  },
+  {
+    label: "فيسبوك",
+    href: "https://www.facebook.com/sunionhomsuni",
+    icon: Facebook,
+  },
+  {
+    label: "يوتيوب",
+    href: "https://www.youtube.com/@sunion.homsuni",
+    icon: Youtube,
   },
 ];
 
@@ -74,51 +99,68 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links Columns */}
-          {footerLinks.map((column) => (
-            <div key={column.title} className="lg:col-span-2">
-              <h4 className="font-display font-bold text-white mb-5">
-                {column.title}
-              </h4>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
-                    >
-                      <ArrowUpLeft className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* Newsletter */}
+          {/* Main Links Column */}
           <div className="lg:col-span-2">
             <h4 className="font-display font-bold text-white mb-5">
-              النشرة البريدية
+              الأقسام الرئيسية
             </h4>
-            <p className="text-white/80 text-sm mb-4">
-              اشترك للحصول على آخر الأخبار والفعاليات
+            <ul className="space-y-3">
+              {mainLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => scrollTo(e, link.href)}
+                    className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
+                  >
+                    <ArrowUpLeft className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="lg:col-span-2">
+            <h4 className="font-display font-bold text-white mb-5">
+              التواصل
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:info@student-union.edu"
+                  className="text-white/80 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
+                >
+                  <ArrowUpLeft className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  اتصل بنا
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media Column */}
+          <div className="lg:col-span-4">
+            <h4 className="font-display font-bold text-white mb-5">
+              تابعنا
+            </h4>
+            <p className="text-white/80 text-sm mb-6">
+              تواصل معنا عبر منصات التواصل الاجتماعي
             </p>
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="بريدك الإلكتروني"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/40 rounded-xl text-white placeholder:text-white/60 text-sm focus:outline-none focus:border-vibrant-orange transition-colors"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full px-4 py-3 bg-vibrant-orange text-white rounded-xl font-semibold text-sm hover:bg-vibrant-orange/90 transition-colors"
-              >
-                اشتراك
-              </button>
-            </form>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.1, y: -3 }}
+                  className="w-11 h-11 rounded-xl bg-white/5 border border-white/40 flex items-center justify-center text-white/80 hover:text-white hover:bg-vibrant-orange hover:border-vibrant-orange transition-colors"
+                >
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -131,7 +173,6 @@ export default function Footer() {
             <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">
               سياسة الخصوصية
             </a>
-           
           </div>
         </div>
       </div>

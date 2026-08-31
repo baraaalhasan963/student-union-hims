@@ -53,8 +53,8 @@ function AnimatedCard({ goal, index }: { goal: typeof goals[0]; index: number })
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, x: -60 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -63,8 +63,7 @@ function AnimatedCard({ goal, index }: { goal: typeof goals[0]; index: number })
       <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full transition-all duration-500 hover:shadow-ambient-lg ambient-shadow overflow-hidden">
         {/* Decorative Corner */}
         <div 
-          className={`absolute -top-20 -right-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 ${goal.bgColor}`}
-          style={{ transform: isHovered ? "scale(3)" : "scale(1)" }}
+          className={`absolute -top-20 -left-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 ${goal.bgColor}`}
         />
         
         {/* Number Badge */}

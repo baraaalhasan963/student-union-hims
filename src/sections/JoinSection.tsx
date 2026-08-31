@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, ArrowLeft, Sparkles, Users, Zap, Heart } from "lucide-react";
+import { Sparkles, Users, Zap, Heart } from "lucide-react";
 
 const benefits = [
   { icon: Users, text: "شبكة علاقات واسعة" },
@@ -16,7 +16,7 @@ export default function JoinSection() {
     <section id="join" className="relative py-28 lg:py-36 bg-deep-teal overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-vibrant-orange/[0.05] rounded-full blur-3xl" />
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -79,16 +79,6 @@ export default function JoinSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-10 py-5 bg-vibrant-orange text-white rounded-2xl font-bold text-lg hover:bg-vibrant-orange/90 transition-colors shadow-ambient-lg group"
-            >
-              <Send className="w-5 h-5" />
-              تسجيل العضوية
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            </motion.a>
           </motion.div>
 
           <motion.p
