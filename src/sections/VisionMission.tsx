@@ -51,13 +51,29 @@ export default function VisionMission() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/5 text-deep-teal text-lg font-semibold mb-6"
             >
               <Eye className="w-6 h-6" />
-              رسالتنا ورؤيتنا
+              رؤيتنا
             </motion.div>
             <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6">
               <span className="text-deep-teal">نحو مستقبلٍ</span> <span className="text-vibrant-orange">يصنعه الشباب</span>
             </h2>
-            <p className="text-dark-plum/60 text-lg leading-relaxed">
-              نؤمن بقوة الشباب وقدرتهم على التغيير، ونسعى لتمثيل صوت الطلبة بكل نزاهة وشفافية
+          </div>
+        </AnimatedSection>
+
+        {/* Mission Badge */}
+        <AnimatedSection>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vibrant-orange/10 text-vibrant-orange text-lg font-semibold mb-6"
+            >
+              <Target className="w-6 h-6" />
+              رسالتنا
+            </motion.div>
+            <p className="text-dark-plum/70 text-lg leading-relaxed">
+              نبني بيئة جامعية تليق بطموح الشباب السوري، عبر تمثيل الطلبة بفاعلية، وتطوير الخدمات والمرافق، وتعزيز الشفافية والمشاركة؛ لتحفيز الابتكار وصقل المهارات وترسيخ قيم العمل الجماعي.
             </p>
           </div>
         </AnimatedSection>
