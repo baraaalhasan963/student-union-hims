@@ -6,6 +6,7 @@ const navLinks = [
   { label: "الرئيسية", target: "hero" },
   { label: "الرؤية والرسالة", target: "vision" },
   { label: "أهدافنا", target: "goals" },
+  { label: "الأقسام", target: "departments" },
   { label: "إنجازاتنا", target: "stats" },
   { label: "انضم إلينا", target: "join" },
 ];

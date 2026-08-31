@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar"
 import HeroCarousel from "../sections/HeroCarousel"
 import VisionMission from "../sections/VisionMission"
 import StrategicGoals from "../sections/StrategicGoals"
+import Departments from "../sections/Departments"
 import StatsSection from "../sections/StatsSection"
 import TestimonialsSection from "../sections/TestimonialsSection"
 import JoinSection from "../sections/JoinSection"
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroCarousel />
       <VisionMission />
       <StrategicGoals />
+      <Departments />
       <StatsSection />
       <TestimonialsSection />
       <JoinSection />
