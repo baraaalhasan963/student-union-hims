@@ -54,8 +54,7 @@ export default function VisionMission() {
               رسالتنا ورؤيتنا
             </motion.div>
             <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6">
-              نحو جامعةٍ<br />
-              <span className="text-gradient">متجددة وطموحة</span>
+              <span className="text-deep-teal">نحو مستقبلٍ</span> <span className="text-vibrant-orange">يصنعه الشباب</span>
             </h2>
             <p className="text-dark-plum/60 text-lg leading-relaxed">
               نؤمن بقوة الشباب وقدرتهم على التغيير، ونسعى لتمثيل صوت الطلبة بكل نزاهة وشفافية
