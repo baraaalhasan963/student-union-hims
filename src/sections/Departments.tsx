@@ -14,50 +14,50 @@ import {
 const departments = [
   {
     id: 1,
-    icon: CalendarDays,
-    title: "قسم الفعاليات والأنشطة",
+    icon: ClipboardList,
+    title: "قسم التنظيم وقضايا الطلبة",
     description:
-      "المسؤول عن تخطيط وتنظيم وإدارة الفعاليات والأنشطة الطلابية، بما يحقق التكامل بين الجوانب العلمية، الثقافية، الرياضية، الاجتماعية.",
+      "متابعة قضايا الطلبة واحتياجاتهم، تنظيم العمل الطلابي وإيصال صوتهم ومقترحاتهم",
     color: "#134f47",
     bgColor: "bg-deep-teal/5",
     accentBg: "bg-deep-teal",
   },
   {
     id: 2,
-    icon: ClipboardList,
-    title: "قسم التنظيم وقضايا الطلبة",
+    icon: GraduationCap,
+    title: "القسم الأكاديمي",
     description:
-      "المسؤول عن تنظيم العمل الطلابي ومتابعة قضايا الطلبة واحتياجاتهم وإيصال صوتهم ومقترحاتهم.",
+      "دعم المسيرة الأكاديمية للطلبة، متابعة قضاياهم التعليمية، وتعزيز بيئة التعلم والتميز العلمي",
     color: "#E85B0D",
     bgColor: "bg-vibrant-orange/5",
     accentBg: "bg-vibrant-orange",
   },
   {
     id: 3,
-    icon: Megaphone,
-    title: "قسم الإعلام",
+    icon: BookOpen,
+    title: "قسم التدريب والتأهيل",
     description:
-      "المسؤول عن نقل صوت الاتحاد وصناعة محتواه وعرض إنجازاته، وتعزيز التواصل مع الطلبة وسماع صوتهم عبر التغطية الإعلامية والحضور الرقمي.",
+      "تطوير مهارات الطلبة وقدراتهم عبر البرامج التدريبية وورش العمل، ودعم جاهزيتهم للمستقبل",
     color: "#71122b",
     bgColor: "bg-deep-maroon/5",
     accentBg: "bg-deep-maroon",
   },
   {
     id: 4,
-    icon: GraduationCap,
-    title: "قسم التدريب والتأهيل",
+    icon: Megaphone,
+    title: "قسم الإعلام",
     description:
-      "المسؤول عن تطوير مهارات الطلبة وقدراتهم عبر البرامج التدريبية وورش العمل، ودعم جاهزيتهم للدخول لسوق العمل.",
+      "نقل صوت الاتحاد وصناعة محتواه، وتعزيز التواصل مع الطلبة عبر التغطية الإعلامية والحضور الرقمي",
     color: "#3D0F28",
     bgColor: "bg-dark-plum/5",
     accentBg: "bg-dark-plum",
   },
   {
     id: 5,
-    icon: BookOpen,
-    title: "القسم الأكاديمي",
+    icon: CalendarDays,
+    title: "مكتب الفعاليات",
     description:
-      "المسؤول عن دعم المسيرة الأكاديمية للطلبة، ومتابعة قضاياهم التعليمية، وتعزيز وتطوير بيئة التعلم والتميّز والبحث العلمي.",
+      "تنظيم الفعاليات والمبادرات التي تجمع الطلبة، وتعزيز التفاعل والمشاركة، وتصنع تجارب هادفة",
     color: "#134f47",
     bgColor: "bg-deep-teal/5",
     accentBg: "bg-deep-teal",
@@ -65,9 +65,9 @@ const departments = [
   {
     id: 6,
     icon: Gauge,
-    title: "قسم المتابعة والتقييم",
+    title: "مكتب المتابعة والتقييم",
     description:
-      "المسؤول عن متابعة وضمان سير العمل وتقييم الأداء وتطويره، لضمان جودة العمل وتحقيق أثر ملموس.",
+      "متابعة العمل وتقييم الأداء، ورصد احتياجات الطلبة وملاحظاتهم لتحسين جودة العمل وأثره",
     color: "#E85B0D",
     bgColor: "bg-vibrant-orange/5",
     accentBg: "bg-vibrant-orange",
@@ -146,20 +146,11 @@ export default function Departments() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6"
+            className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-dark-plum leading-tight"
           >
-            الأقسام
-            <span className="text-gradient"> الطلابية</span>
+            ستة أقسام تتكامل أدوارها لخدمة الطالب وتمكينه وتعزيز مشاركته في
+            <span className="text-gradient"> الحياة الجامعية</span>
           </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-dark-plum/60 text-lg leading-relaxed"
-          >
-            أقسام متخصصة تعمل معاً لخدمة الطلبة، كلٌّ في مجاله، لتحقيق بيئة جامعية متكاملة وداعمة.
-          </motion.p>
         </div>
 
         {/* Departments Grid */}

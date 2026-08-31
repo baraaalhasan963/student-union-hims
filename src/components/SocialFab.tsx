@@ -47,8 +47,8 @@ export default function SocialFab() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60] flex flex-col-reverse items-end gap-3">
-      {/* Tree List */}
+    <>
+      {/* Tree List - fixed above the button */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -56,21 +56,16 @@ export default function SocialFab() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="w-64 bg-white rounded-3xl shadow-2xl border border-dark-plum/5 overflow-hidden"
+            className="fixed bottom-24 right-6 z-[70] w-64 bg-white rounded-3xl shadow-2xl border border-dark-plum/5 overflow-hidden"
           >
             <div className="flex items-center justify-between px-5 py-4 border-b border-dark-plum/5">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#E1306C] via-[#E85B0D] to-[#00AACC]">
-                  <Send className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-sm text-dark-plum">
-                    منصات التواصل
-                  </h4>
-                  <p className="text-dark-plum/50 text-xs">
-                    وسائل اتحاد الطلبة
-                  </p>
-                </div>
+              <div>
+                <h4 className="font-display font-bold text-sm text-dark-plum">
+                  منصات التواصل
+                </h4>
+                <p className="text-dark-plum/50 text-xs">
+                  وسائل تواصل اتحاد الطلبة
+                </p>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
@@ -80,7 +75,7 @@ export default function SocialFab() {
               </button>
             </div>
 
-            <div className="p-3 flex flex-col gap-1.5">
+            <div className="p-3 flex flex-col gap-1.5 max-h-[60vh] overflow-y-auto">
               {platforms.map((platform, i) => (
                 <motion.a
                   key={platform.label}
@@ -112,25 +107,26 @@ export default function SocialFab() {
         )}
       </AnimatePresence>
 
-      {/* FAB Button - Social hub with platform mini-icons */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.92 }}
-        aria-label="منصات التواصل"
-        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-[#E1306C] via-[#E85B0D] to-[#00AACC] text-white flex items-center justify-center shadow-2xl hover:opacity-95 transition-opacity"
-      >
-        {isOpen ? (
-          <X className="w-7 h-7" />
-        ) : (
+      {/* FAB Button - fixed in corner, shows only when closed */}
+      {!isOpen && (
+        <motion.button
+          onClick={() => setIsOpen(true)}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.92 }}
+          aria-label="منصات التواصل"
+          className="fixed bottom-6 right-6 z-[60] w-16 h-16 rounded-full bg-gradient-to-br from-[#E1306C] via-[#E85B0D] to-[#00AACC] text-white flex items-center justify-center shadow-2xl hover:opacity-95 transition-opacity"
+        >
           <span className="grid grid-cols-2 gap-0.5 p-2">
             <Instagram className="w-4 h-4 text-white" />
             <Send className="w-4 h-4 text-white" />
             <Facebook className="w-4 h-4 text-white" />
             <Youtube className="w-4 h-4 text-white" />
           </span>
-        )}
-      </motion.button>
-    </div>
+        </motion.button>
+      )}
+    </>
   );
 }
