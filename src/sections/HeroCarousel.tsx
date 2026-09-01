@@ -22,14 +22,6 @@ const slides = [
     ctaLink: "#stats",
   },
   {
-    id: 3,
-    title: "منكم\nوإليكم",
-    subtitle: "قناة تواصل مفتوحة بين إدارة الجامعة وطلبتها الكرام",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&h=900&fit=crop&q=80",
-    cta: "المزيد عنّا",
-    ctaLink: "#vision",
-  },
-  {
     id: 4,
     title: "تهانينا\nللخريجين",
     subtitle: "نفخر بإنجازكم ونحتفل بوصولكم إلى محطة التخرج، فأنتم ثمرة الجهد والعطاء",

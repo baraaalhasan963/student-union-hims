@@ -104,7 +104,13 @@ function AnimatedCard({ department, index }: { department: typeof departments[0]
             <department.icon className="w-8 h-8" style={{ color: department.color }} />
           </div>
 
-          <h3 className="font-display font-bold text-2xl lg:text-3xl text-dark-plum mb-4 group-hover:text-[#3D0F28] transition-colors">
+          <h3 className="font-display font-bold text-2xl lg:text-3xl text-dark-plum mb-4 group-hover:text-[#3D0F28] transition-colors flex items-center gap-3">
+            <span
+              className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center text-canvas font-bold text-base"
+              style={{ backgroundColor: department.color }}
+            >
+              {index + 1}
+            </span>
             {department.title}
           </h3>
 
@@ -148,7 +154,7 @@ export default function Departments() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-dark-plum leading-tight"
           >
-            ستة أقسام تتكامل أدوارها لخدمة الطالب وتمكينه وتعزيز مشاركته في
+            سبعة أقسام تتكامل أدوارها لخدمة الطالب وتمكينه وتعزيز مشاركته في
             <span className="text-gradient"> الحياة الجامعية</span>
           </motion.h2>
         </div>

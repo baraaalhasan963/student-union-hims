@@ -44,7 +44,7 @@ export default function VisionMission() {
               <span className="text-deep-teal">نحو مستقبلٍ</span> <span className="text-vibrant-orange">يصنعه الشباب</span>
             </h2>
             <p className="text-dark-plum/50 text-lg md:text-xl font-medium">
-              سؤول، متمكن، فاعل، يصنعون أثرهم اليوم ويبنون مستقبلهم غداً
+              مسؤول، متمكن، فاعل، يصنعون أثرهم اليوم ويبنون مستقبلهم غداً
             </p>
           </div>
         </AnimatedSection>
