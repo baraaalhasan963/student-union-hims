@@ -13,10 +13,13 @@ import {
 
 const mainLinks = [
   { label: "الرئيسية", href: "#hero" },
-  { label: "الرؤية والرسالة", href: "#vision" },
-  { label: "الأهداف الاستراتيجية", href: "#goals" },
+  { label: "عن الاتحاد", href: "#about" },
   { label: "أقسامنا", href: "#departments" },
-  { label: "الإنجازات", href: "#stats" },
+  { label: "فعالياتنا", href: "#events" },
+  { label: "أثرنا", href: "#stats" },
+  { label: "بوابة الخدمات", href: "#services" },
+  { label: "شاركنا رأيك", href: "#feedback" },
+  { label: "تطوّع معنا", href: "#volunteer" },
 ];
 
 const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

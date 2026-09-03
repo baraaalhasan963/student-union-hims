@@ -4,11 +4,13 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "الرئيسية", target: "hero" },
-  { label: "الرؤية والرسالة", target: "vision" },
-  { label: "أهدافنا", target: "goals" },
-  { label: "الأقسام", target: "departments" },
-  { label: "إنجازاتنا", target: "stats" },
-  { label: "انضم إلينا", target: "join" },
+  { label: "عن الاتحاد", target: "about" },
+  { label: "أقسامنا", target: "departments" },
+  { label: "فعالياتنا", target: "events" },
+  { label: "أثرنا", target: "stats" },
+  { label: "بوابة الخدمات", target: "services" },
+  { label: "شاركنا رأيك", target: "feedback" },
+  { label: "تطوّع معنا", target: "volunteer" },
 ];
 
 const scrollTo = (id: string) => {
