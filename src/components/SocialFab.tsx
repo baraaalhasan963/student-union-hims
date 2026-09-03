@@ -57,7 +57,7 @@ export default function SocialFab() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-[10rem] right-6 z-[70] w-64 bg-white rounded-3xl shadow-2xl border border-dark-plum/5 overflow-hidden"
+            className="fixed bottom-[6rem] sm:bottom-[10rem] right-6 z-[70] w-64 max-w-[calc(100vw-3rem)] bg-white rounded-3xl shadow-2xl border border-dark-plum/5 overflow-hidden"
           >
             <div className="flex items-center justify-between px-5 py-4 border-b border-dark-plum/5">
               <div>
@@ -117,7 +117,7 @@ export default function SocialFab() {
         whileTap={{ scale: 0.92 }}
         aria-label="رقم الطوارئ"
         title="اتصل بنا الآن"
-        className="fixed bottom-[6.25rem] right-[2.125rem] z-[60] w-11 h-11 rounded-full bg-vibrant-orange text-white flex items-center justify-center shadow-2xl hover:bg-vibrant-orange/90 transition-colors"
+        className="fixed bottom-[3rem] sm:bottom-[6.25rem] right-[1.5rem] sm:right-[2.125rem] z-[60] w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-vibrant-orange text-white flex items-center justify-center shadow-2xl hover:bg-vibrant-orange/90 transition-colors"
       >
         <Siren className="w-5 h-5" />
       </motion.a>

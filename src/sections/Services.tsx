@@ -74,7 +74,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative"
     >
-      <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full ambient-shadow hover:shadow-ambient-lg transition-shadow duration-500 overflow-hidden">
+      <div className="relative bg-white rounded-3xl p-6 md:p-8 lg:p-10 h-full ambient-shadow hover:shadow-ambient-lg transition-shadow duration-500 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 bg-deep-teal/5" />
 
         <div className="relative z-10">
@@ -82,7 +82,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <service.icon className="w-8 h-8" style={{ color: service.color }} />
           </div>
 
-          <h3 className="font-display font-bold text-2xl text-dark-plum mb-3">
+          <h3 className="font-display font-bold text-xl md:text-2xl text-dark-plum mb-3">
             {service.title}
           </h3>
 
@@ -135,7 +135,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/10 text-deep-teal text-lg font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/10 text-deep-teal text-sm md:text-lg font-semibold mb-6"
           >
             <LifeBuoy className="w-6 h-6" />
             مركز الدعم الموحّد
@@ -145,7 +145,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-dark-plum leading-tight mb-6"
           >
             بوابة
             <span className="text-gradient"> الخدمات</span>
@@ -173,10 +173,10 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-3xl p-8 lg:p-10 ambient-shadow flex flex-col lg:flex-row lg:items-center gap-8 max-w-5xl mx-auto"
+          className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 ambient-shadow flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8 max-w-5xl mx-auto"
         >
           <div className="flex-1">
-            <h3 className="font-display font-bold text-2xl text-dark-plum mb-2">
+            <h3 className="font-display font-bold text-xl md:text-2xl text-dark-plum mb-2">
               تحتاج مساعدة على غير خدمة معيّنة؟
             </h3>
             <p className="text-dark-plum/60 text-base">

@@ -93,7 +93,7 @@ function EventCard({ event, index }: { event: typeof events[0]; index: number })
       transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative"
     >
-      <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full ambient-shadow hover:shadow-ambient-lg transition-shadow duration-500 overflow-hidden">
+      <div className="relative bg-white rounded-3xl p-6 md:p-8 lg:p-10 h-full ambient-shadow hover:shadow-ambient-lg transition-shadow duration-500 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 bg-vibrant-orange/5" />
 
         <div className="relative z-10">
@@ -174,8 +174,8 @@ function ArchiveCard({ item, index }: { item: typeof archive[0]; index: number }
           <div className="absolute inset-0 bg-gradient-to-t from-dark-plum/70 to-transparent" />
         </div>
 
-        <div className="p-8">
-          <h4 className="font-display font-bold text-xl text-dark-plum mb-3">
+        <div className="p-6 md:p-8">
+          <h4 className="font-display font-bold text-lg md:text-xl text-dark-plum mb-3">
             {item.title}
           </h4>
           <p className="text-dark-plum/65 leading-relaxed text-sm mb-4">
@@ -210,7 +210,7 @@ export default function Events() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vibrant-orange/20 text-deep-maroon text-lg font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vibrant-orange/20 text-deep-maroon text-sm md:text-lg font-semibold mb-6"
           >
             <CalendarDays className="w-6 h-6" />
             أجندة وأنشطة
@@ -220,7 +220,7 @@ export default function Events() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-dark-plum leading-tight mb-6"
           >
             فعالياتنا
             <span className="text-gradient"> الحالية</span>

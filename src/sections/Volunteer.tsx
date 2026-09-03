@@ -37,7 +37,7 @@ export default function Volunteer() {
   };
 
   return (
-    <section id="volunteer" className="relative py-28 lg:py-36 bg-deep-teal overflow-hidden">
+    <section id="volunteer" className="relative py-20 md:py-28 lg:py-36 bg-deep-teal overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-3xl" />
@@ -51,7 +51,7 @@ export default function Volunteer() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-lg font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm md:text-lg font-semibold mb-6"
           >
             <HeartHandshake className="w-6 h-6" />
             انضم إلى فريق العمل
@@ -61,7 +61,7 @@ export default function Volunteer() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6"
           >
             <span className="text-vibrant-orange">تطوّع</span> معنا
           </motion.h2>
@@ -99,7 +99,7 @@ export default function Volunteer() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-3xl mx-auto bg-white rounded-3xl p-8 lg:p-10"
+          className="max-w-3xl mx-auto bg-white rounded-3xl p-6 md:p-8 lg:p-10"
         >
           {sent ? (
             <div className="text-center py-12">

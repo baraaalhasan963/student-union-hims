@@ -77,7 +77,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <span
       ref={ref}
-      className="block w-full text-center font-display font-bold text-2xl md:text-3xl lg:text-4xl tabular-nums text-canvas"
+      className="block w-full text-center font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl tabular-nums text-canvas"
     >
       {suffix}{count.toLocaleString("en-EG")}
     </span>
@@ -105,7 +105,7 @@ export default function StatsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-canvas text-lg font-semibold mb-6 "
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-canvas text-sm md:text-lg font-semibold mb-6 "
           >
             <Trophy className="w-6 h-6 " />
             إنجازاتنا
@@ -115,7 +115,7 @@ export default function StatsSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-canvas leading-tight mb-6"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-canvas leading-tight mb-6"
           >
             أرقام تتحدث
             <span className="text-canvas"> عن</span>
@@ -142,7 +142,7 @@ export default function StatsSection() {
                 
                 <div className="relative">
                   <div 
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-5 bg-white/10"
+                    className="w-10 h-10 md:w-11 md:h-11 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 bg-white/10"
                   >
                     <stat.icon className="w-5 h-5 text-canvas" />
                   </div>

@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="relative py-28 lg:py-36 bg-canvas overflow-hidden">
+    <section className="relative py-20 md:py-28 lg:py-36 bg-canvas overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-deep-teal/[0.03] rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6 lg:px-12 relative" ref={sectionRef}>
@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-4xl md:text-5xl text-dark-plum leading-tight"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-dark-plum leading-tight"
           >
             ما يقوله الطلبة
             <span className="text-gradient"> عنا</span>
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full shrink-0 px-4">
-                  <div className="bg-white rounded-3xl p-10 lg:p-12 ambient-shadow">
+                  <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 ambient-shadow">
                     <div className="flex items-center gap-1 mb-6">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-vibrant-orange text-vibrant-orange" />

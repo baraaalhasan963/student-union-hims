@@ -44,14 +44,14 @@ export default function Feedback() {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative" ref={sectionRef}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
           {/* Left: Info */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-maroon/10 text-deep-maroon text-lg font-semibold mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-maroon/10 text-deep-maroon text-sm md:text-lg font-semibold mb-6"
             >
               <MessageSquareHeart className="w-6 h-6" />
               صوتك مسموع
@@ -61,7 +61,7 @@ export default function Feedback() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-dark-plum leading-tight mb-6"
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-dark-plum leading-tight mb-6"
             >
               شاركنا
               <span className="text-gradient"> رأيك</span>
@@ -103,7 +103,7 @@ export default function Feedback() {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-white rounded-3xl p-8 lg:p-10 ambient-shadow"
+            className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 ambient-shadow"
           >
             {sent ? (
               <div className="text-center py-12">

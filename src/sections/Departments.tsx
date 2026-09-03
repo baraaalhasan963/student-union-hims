@@ -96,17 +96,17 @@ function AnimatedCard({ department, index }: { department: typeof departments[0]
       transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative"
     >
-      <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full transition-all duration-500 hover:shadow-ambient-lg ambient-shadow overflow-hidden">
+      <div className="relative bg-white rounded-3xl p-6 md:p-8 lg:p-10 h-full transition-all duration-500 hover:shadow-ambient-lg ambient-shadow overflow-hidden">
         <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full transition-all duration-700 opacity-0 group-hover:opacity-100 bg-deep-teal/5" />
 
         <div className="relative z-10">
-          <div className={`w-16 h-16 rounded-2xl ${department.bgColor} flex items-center justify-center mb-8 transition-colors duration-300`}>
-            <department.icon className="w-8 h-8" style={{ color: department.color }} />
+          <div className={`w-12 h-12 md:w-16 md:h-16 rounded-2xl ${department.bgColor} flex items-center justify-center mb-6 md:mb-8 transition-colors duration-300`}>
+            <department.icon className="w-6 h-6 md:w-8 md:h-8" style={{ color: department.color }} />
           </div>
 
-          <h3 className="font-display font-bold text-2xl lg:text-3xl text-dark-plum mb-4 group-hover:text-[#3D0F28] transition-colors flex items-center gap-3">
+          <h3 className="font-display font-bold text-lg md:text-2xl lg:text-3xl text-dark-plum mb-4 group-hover:text-[#3D0F28] transition-colors flex items-center gap-3">
             <span
-              className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center text-canvas font-bold text-base"
+              className="w-8 h-8 md:w-9 md:h-9 shrink-0 rounded-lg flex items-center justify-center text-canvas font-bold text-sm md:text-base"
               style={{ backgroundColor: department.color }}
             >
               {index + 1}
@@ -142,7 +142,7 @@ export default function Departments() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/10 text-deep-teal text-lg font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-deep-teal/10 text-deep-teal text-sm md:text-lg font-semibold mb-6"
           >
             <Layers className="w-6 h-6" />
             أقسامنا
@@ -152,7 +152,7 @@ export default function Departments() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-dark-plum leading-tight"
+            className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-dark-plum leading-tight"
           >
             سبعة أقسام تتكامل أدوارها لخدمة الطالب وتمكينه وتعزيز مشاركته في
             <span className="text-gradient"> الحياة الجامعية</span>

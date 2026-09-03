@@ -86,7 +86,7 @@ export default function HeroCarousel() {
   return (
     <section 
       id="hero" 
-      className="relative h-screen w-full overflow-hidden bg-deep-teal"
+      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden bg-deep-teal"
     >
       {/* Background Images */}
       <AnimatePresence initial={false} custom={direction}>
@@ -110,7 +110,7 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative h-full flex items-end container mx-auto px-6 lg:px-12 pb-12 lg:pb-16" dir="rtl">
+      <div className="relative h-full flex items-end container mx-auto px-4 sm:px-6 lg:px-12 pb-10 lg:pb-16" dir="rtl">
         <div className="max-w-2xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -120,11 +120,11 @@ export default function HeroCarousel() {
               exit="hidden"
               className="space-y-6"
             >
-              <motion.div className="bg-deep-teal/20 backdrop-blur-sm p-6 rounded-[2rem] max-w-3xl space-y-5">
+              <motion.div className="bg-deep-teal/20 backdrop-blur-sm p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] max-w-3xl space-y-4 sm:space-y-5">
                 <motion.h1
                   custom={1}
                   variants={textVariants}
-                  className="font-display font-semibold text-4xl md:text-5xl lg:text-4xl text-white leading-tight whitespace-nowrap"
+                  className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-white leading-tight"
                 >
                   {slides[current].title.replace(/\n/g, " ")}
                 </motion.h1>
@@ -133,7 +133,7 @@ export default function HeroCarousel() {
                 <motion.p
                   custom={2}
                   variants={textVariants}
-                  className="text-white/85 text-base md:text-lg leading-snug max-w-lg"
+                  className="text-white/85 text-sm sm:text-base md:text-lg leading-snug max-w-lg"
                 >
                   {slides[current].subtitle}
                 </motion.p>
@@ -145,49 +145,43 @@ export default function HeroCarousel() {
 
       {/* Navigation Arrows */}
       <div 
-        className="absolute inset-y-0 left-0 w-32 z-20 pointer-events-auto flex items-center justify-start pl-6"
+        className="absolute inset-y-0 left-0 w-16 sm:w-32 z-20 pointer-events-auto flex items-center justify-start pl-3 sm:pl-6"
         onMouseEnter={() => setIsHoveredLeft(true)}
         onMouseLeave={() => setIsHoveredLeft(false)}
       >
         <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHoveredLeft ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={(e) => {
             e.stopPropagation();
             prev();
           }}
-          className="pointer-events-auto w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+          className={`pointer-events-auto w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-opacity duration-300 ${isHoveredLeft ? "opacity-100" : "opacity-100 lg:opacity-0 lg:hover:opacity-100"}`}
         >
           <ChevronRight className="w-5 h-5" />
         </motion.button>
       </div>
 
       <div 
-        className="absolute inset-y-0 right-0 w-32 z-20 pointer-events-auto flex items-center justify-end pr-6"
+        className="absolute inset-y-0 right-0 w-16 sm:w-32 z-20 pointer-events-auto flex items-center justify-end pr-3 sm:pr-6"
         onMouseEnter={() => setIsHoveredRight(true)}
         onMouseLeave={() => setIsHoveredRight(false)}
       >
         <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHoveredRight ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={(e) => {
             e.stopPropagation();
             next();
           }}
-          className="pointer-events-auto w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+          className={`pointer-events-auto w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-opacity duration-300 ${isHoveredRight ? "opacity-100" : "opacity-100 lg:opacity-0 lg:hover:opacity-100"}`}
         >
           <ChevronLeft className="w-5 h-5" />
         </motion.button>
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 z-20">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -215,7 +209,7 @@ export default function HeroCarousel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-12 hidden lg:flex flex-col items-center gap-2 z-20"
+        className="absolute bottom-6 sm:bottom-10 left-6 sm:left-12 hidden lg:flex flex-col items-center gap-2 z-20"
       >
         <span className="text-white/50 text-xs font-medium writing-mode-vertical rotate-180" style={{ writingMode: "vertical-rl" }}>
           اسحب للأسفل

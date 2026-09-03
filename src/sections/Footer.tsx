@@ -65,7 +65,7 @@ export default function Footer() {
       {/* Top Decoration */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-24" dir="rtl">
+      <div className="container mx-auto px-6 lg:px-12 py-12 md:py-20 lg:py-24" dir="rtl">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 text-right">
           {/* Brand Column */}
           <div className="lg:col-span-4">
@@ -77,11 +77,11 @@ export default function Footer() {
               <img
                 src="Asset2.svg"
                 alt="اتحاد الطلبة - شعار"
-                className="h-16 w-auto object-contain"
+                className="h-12 md:h-16 w-auto object-contain"
               />
             </motion.a>
 
-            <p className="text-white/80 leading-relaxed mb-8 max-w-sm">
+            <p className="text-white/80 leading-relaxed mb-6 md:mb-8 max-w-sm text-sm md:text-base">
               نمثلكم، ندافع عن حقوقكم، ونسعى لتحقيق بيئة أكاديمية محفزة للإبداع والتميز.
             </p>
 
@@ -168,7 +168,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-8 md:mt-16 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/70 text-sm">
             © 2025 اتحاد الطلبة - جامعة حمص - جميع الحقوق محفوظة.
           </p>
